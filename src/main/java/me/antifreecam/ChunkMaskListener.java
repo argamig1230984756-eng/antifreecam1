@@ -76,7 +76,7 @@ public class ChunkMaskListener extends PacketListenerAbstract {
                 if (sectionMinY + y >= hideY) break;
                 for (int x = 0; x < 16; x++) {
                     for (int z = 0; z < 16; z++) {
-                        if (hideAir || chunk.get(cv, x, y, z) != 0) {
+                        if (hideAir || !chunk.get(cv, x, y, z).getType().isAir()) {
                             chunk.set(cv, x, y, z, fake);
                             changed = true;
                         }
