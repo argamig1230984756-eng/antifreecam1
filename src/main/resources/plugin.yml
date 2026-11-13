@@ -1,0 +1,17 @@
+name: AntiFreecam
+version: 1.1.0
+main: me.antifreecam.AntiFreecam
+api-version: '1.21'
+depend: [packetevents]
+description: Hides underground terrain, caves and entities from surface players so freecam sees nothing.
+commands:
+  antifreecam:
+    description: AntiFreecam admin command
+    usage: /antifreecam <reload|status>
+    permission: antifreecam.admin
+permissions:
+  antifreecam.admin:
+    default: op
+  antifreecam.bypass:
+    description: Not masked (sees everything normally)
+    default: op

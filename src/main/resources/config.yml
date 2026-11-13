@@ -1,0 +1,40 @@
+# ---------- Underground masking (the main anti-freecam feature) ----------
+# Everything BELOW this Y level is hidden from players who are on the surface.
+hide-below-y: 40
+
+# A player is "underground" (nothing hidden, fully vanilla) when their Y is below
+# hide-below-y + reveal-margin. Above that they are masked.
+reveal-margin: 15
+
+# Block shown instead of the hidden terrain.
+fake-block: minecraft:deepslate
+
+# true  = replace EVERYTHING (caves become solid, caves/rooms fully hidden)
+# false = replace only solid blocks (air pockets still show as open space)
+hide-air: true
+
+# Hide mobs/players below hide-below-y from masked players.
+hide-underground-entities: true
+
+# Worlds the masking applies to. Empty list = all worlds.
+worlds:
+  - world
+
+# When a player goes underground / back to the surface, nearby chunks are re-sent
+# so the new view applies. Spread out to avoid lag.
+refresh:
+  radius: 10
+  chunks-per-tick: 4
+
+# ---------- Line-of-sight entity hiding ----------
+los-hiding:
+  enabled: true
+  check-interval-ticks: 4
+  max-check-distance: 64
+  always-visible-distance: 6
+  hide-players: true
+  hide-mobs: true
+
+# ---------- Spectator ----------
+block-spectator-teleport: true
+force-out-of-spectator: false
